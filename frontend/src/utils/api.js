@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://typleplate.onrender.com/api';
 
 /**
  * Fetches next license plate challenge from Python Flask backend with difficulty filter.
