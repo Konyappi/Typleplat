@@ -191,7 +191,7 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
     )
 
     dirt_color = (74, 53, 37) if difficulty != "hard" else (59, 38, 22)
-    dirt_opacity = {"easy": 135, "normal": 205, "hard": 235}[difficulty]
+    dirt_opacity = {"easy": 145, "normal": 215, "hard": 245}[difficulty]
     dirt_layer = Image.new("RGBA", (width, height), dirt_color + (0,))
     dirt_layer.putalpha(dirt_mask.point(lambda value: value * dirt_opacity // 255))
     img = Image.alpha_composite(img, dirt_layer)
