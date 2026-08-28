@@ -84,7 +84,27 @@ CHALLENGES_DB = {
     103: {"plate": "B 9988 XZ", "archetype_idx": 0, "hint": "Plat DKI Jakarta (B) - Sangat Buram", "base_difficulty": "hard"},
     203: {"plate": "D 7777 WIN", "archetype_idx": 1, "hint": "Plat Bandung (D) - Terutup Lumpur Tebal", "base_difficulty": "hard"},
     502: {"plate": "DK 888 BALI", "archetype_idx": 4, "hint": "Plat Bali (DK) - Lumpur Offroad Ekstrem", "base_difficulty": "hard"},
-    601: {"plate": "H 911 POL", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli Terkena Hujan", "base_difficulty": "hard"}
+    601: {"plate": "H 911 POL", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli Terkena Hujan", "base_difficulty": "hard"},
+
+    # Additional challenges keep the vehicle and plate selection varied.
+    104: {"plate": "B 2716 QN", "archetype_idx": 0, "hint": "Plat DKI Jakarta (B) - Seri QN", "base_difficulty": "easy"},
+    204: {"plate": "D 2468 RT", "archetype_idx": 1, "hint": "Plat Bandung (D) - Angka Berurutan", "base_difficulty": "easy"},
+    304: {"plate": "L 7312 KU", "archetype_idx": 2, "hint": "Plat Surabaya (L) - Truk Logistik", "base_difficulty": "easy"},
+    404: {"plate": "F 9087 LM", "archetype_idx": 3, "hint": "Plat Bogor (F) - Angkot Kota", "base_difficulty": "easy"},
+    504: {"plate": "DK 4567 AC", "archetype_idx": 4, "hint": "Plat Bali (DK) - Jeep Pantai", "base_difficulty": "easy"},
+    604: {"plate": "H 2024 OPS", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli", "base_difficulty": "easy"},
+    106: {"plate": "B 6390 MV", "archetype_idx": 0, "hint": "Plat DKI Jakarta (B) - Seri MV", "base_difficulty": "normal"},
+    206: {"plate": "D 5073 ZX", "archetype_idx": 1, "hint": "Plat Bandung (D) - Mobil Sport", "base_difficulty": "normal"},
+    306: {"plate": "L 2846 PR", "archetype_idx": 2, "hint": "Plat Surabaya (L) - Truk Berdebu", "base_difficulty": "normal"},
+    406: {"plate": "F 6175 CD", "archetype_idx": 3, "hint": "Plat Bogor (F) - Angkot Kota", "base_difficulty": "normal"},
+    506: {"plate": "DK 7901 LM", "archetype_idx": 4, "hint": "Plat Bali (DK) - Jeep Pantai", "base_difficulty": "normal"},
+    606: {"plate": "H 3482 RT", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli", "base_difficulty": "normal"},
+    107: {"plate": "B 4419 VX", "archetype_idx": 0, "hint": "Plat DKI Jakarta (B) - Seri VX", "base_difficulty": "hard"},
+    207: {"plate": "D 9090 GT", "archetype_idx": 1, "hint": "Plat Bandung (D) - Angka Kembar", "base_difficulty": "hard"},
+    307: {"plate": "L 6721 HD", "archetype_idx": 2, "hint": "Plat Surabaya (L) - Truk Lumpur", "base_difficulty": "hard"},
+    407: {"plate": "F 1357 XR", "archetype_idx": 3, "hint": "Plat Bogor (F) - Angkot Terkena Hujan", "base_difficulty": "hard"},
+    507: {"plate": "DK 314 BALI", "archetype_idx": 4, "hint": "Plat Bali (DK) - Jeep Offroad Ekstrem", "base_difficulty": "hard"},
+    607: {"plate": "H 707 PAT", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli Buram", "base_difficulty": "hard"}
 }
 
 MUD_PATTERN = (
