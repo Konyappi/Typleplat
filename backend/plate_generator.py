@@ -152,7 +152,10 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
     try:
         font = ImageFont.truetype("arial.ttf", 26)
     except IOError:
-        font = ImageFont.load_default()
+        try:
+            font = ImageFont.load_default(size=26)
+        except TypeError:
+            font = ImageFont.load_default()
 
     draw.text((plate_box[0] + 15, plate_box[1] + 10), plate_text, fill="#FFFFFF", font=font)
 
