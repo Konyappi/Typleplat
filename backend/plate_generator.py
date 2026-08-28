@@ -168,15 +168,15 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
             draw.ellipse([mx - 2, my - 2, mx + 2, my + 2], fill="#4A3525")
     elif difficulty == "normal":
         # Moderate mud coverage, kept entirely inside the plate frame.
-        for _ in range(22):
-            mr = random.randint(5, 13)
+        for _ in range(14):
+            mr = random.randint(4, 10)
             mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
             my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
             draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill="#4A3525")
     elif difficulty == "hard":
         # Heavy mud coverage + thick scratch lines across plate text.
-        for _ in range(42):
-            mr = random.randint(8, 22)
+        for _ in range(30):
+            mr = random.randint(6, 16)
             mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
             my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
             draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill="#3B2616")
