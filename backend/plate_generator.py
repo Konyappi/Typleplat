@@ -160,34 +160,38 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
     draw.text((plate_box[0] + 15, plate_box[1] + 10), plate_text, fill="#FFFFFF", font=font)
 
     # 3. Apply Dirt / Obscuration Effects according to Selected Difficulty
-    dirt_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    dirt_draw = ImageDraw.Draw(dirt_layer)
+    dirt_mask = Image.new("L", (width, height), 0)
+    dirt_draw = ImageDraw.Draw(dirt_mask)
 
     if difficulty == "easy":
-        # Minimal dirt - 2 small specks only, plate is crystal clear
-        for _ in range(2):
+        # Minimal dirt - visible small specks while keeping the plate clear.
+        for _ in range(4):
             mx = random.randint(plate_box[0] + 5, plate_box[2] - 5)
             my = random.randint(plate_box[1] + 5, plate_box[3] - 5)
-            draw.ellipse([mx - 2, my - 2, mx + 2, my + 2], fill="#4A3525")
+            dirt_draw.ellipse([mx - 3, my - 3, mx + 3, my + 3], fill=255)
     elif difficulty == "normal":
         # Moderate mud coverage, kept entirely inside the plate frame.
         for _ in range(14):
             mr = random.randint(4, 10)
             mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
             my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
-            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=(74, 53, 37, 170))
+            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=255)
     elif difficulty == "hard":
         # Heavy mud coverage + thick scratch lines across plate text.
         for _ in range(30):
             mr = random.randint(6, 16)
             mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
             my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
-            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=(59, 38, 22, 185))
+            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=255)
         
         # Heavy scratches & mud streaks across numbers
-        dirt_draw.line([plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10], fill=(85, 68, 51, 160), width=6)
-        dirt_draw.line([plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12], fill=(43, 26, 10, 160), width=7)
+        dirt_draw.line([plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10], fill=255, width=6)
+        dirt_draw.line([plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12], fill=255, width=7)
 
+    dirt_color = (74, 53, 37) if difficulty != "hard" else (59, 38, 22)
+    dirt_opacity = {"easy": 120, "normal": 135, "hard": 150}[difficulty]
+    dirt_layer = Image.new("RGBA", (width, height), dirt_color + (0,))
+    dirt_layer.putalpha(dirt_mask.point(lambda value: value * dirt_opacity // 255))
     img = Image.alpha_composite(img, dirt_layer)
 
     # Convert to RGB JPEG bytes
