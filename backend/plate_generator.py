@@ -87,6 +87,12 @@ CHALLENGES_DB = {
     601: {"plate": "H 911 POL", "archetype_idx": 5, "hint": "Plat Semarang (H) - Mobil Patroli Terkena Hujan", "base_difficulty": "hard"}
 }
 
+MUD_PATTERN = (
+    (18, 15, 9), (42, 11, 7), (66, 22, 12), (91, 10, 8),
+    (116, 19, 13), (140, 12, 7), (25, 38, 8), (53, 34, 10),
+    (82, 42, 7), (110, 35, 11), (137, 43, 8), (72, 27, 6),
+)
+
 def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> bytes:
     """
     Renders a cartoon vehicle rear view with license plate obscurations using Pillow.
@@ -163,36 +169,26 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
     dirt_mask = Image.new("L", (width, height), 0)
     dirt_draw = ImageDraw.Draw(dirt_mask)
 
-    if difficulty == "easy":
-        # Minimal dirt - visible small specks while keeping the plate clear.
-        for _ in range(4):
-            mx = random.randint(plate_box[0] + 5, plate_box[2] - 5)
-            my = random.randint(plate_box[1] + 5, plate_box[3] - 5)
-            dirt_draw.ellipse([mx - 3, my - 3, mx + 3, my + 3], fill=255)
-    elif difficulty == "normal":
-        # Moderate mud coverage, kept entirely inside the plate frame.
-        for _ in range(14):
-            mr = random.randint(4, 10)
-            mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
-            my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
-            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=255)
-    elif difficulty == "hard":
-        # Heavy mud coverage + thick scratch lines across plate text.
-        for _ in range(30):
-            mr = random.randint(6, 16)
-            mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
-            my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
-            dirt_draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill=255)
-        
-        # Heavy scratches & mud streaks across numbers
-        dirt_draw.line([plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10], fill=255, width=6)
-        dirt_draw.line([plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12], fill=255, width=7)
+    for offset_x, offset_y, radius in MUD_PATTERN:
+        mx = plate_box[0] + offset_x
+        my = plate_box[1] + offset_y
+        dirt_draw.ellipse([mx - radius, my - radius, mx + radius, my + radius], fill=255)
 
-    if difficulty in ("normal", "hard"):
-        dirt_draw.rectangle(
-            [plate_box[0], plate_box[1] + 27, plate_box[2], plate_box[1] + 33],
-            fill=0,
-        )
+    dirt_draw.line(
+        [plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10],
+        fill=255,
+        width=6,
+    )
+    dirt_draw.line(
+        [plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12],
+        fill=255,
+        width=7,
+    )
+
+    dirt_draw.rectangle(
+        [plate_box[0], plate_box[1] + 27, plate_box[2], plate_box[1] + 33],
+        fill=0,
+    )
 
     dirt_color = (74, 53, 37) if difficulty != "hard" else (59, 38, 22)
     dirt_opacity = {"easy": 135, "normal": 205, "hard": 235}[difficulty]
