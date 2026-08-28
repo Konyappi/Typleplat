@@ -163,27 +163,27 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
     if difficulty == "easy":
         # Minimal dirt - 2 small specks only, plate is crystal clear
         for _ in range(2):
-            mx = random.randint(plate_box[0]+5, plate_box[0]+20)
-            my = random.randint(plate_box[1]+5, plate_box[1]+15)
-            draw.ellipse([mx, my, mx+4, my+4], fill="#4A3525")
+            mx = random.randint(plate_box[0] + 5, plate_box[2] - 5)
+            my = random.randint(plate_box[1] + 5, plate_box[3] - 5)
+            draw.ellipse([mx - 2, my - 2, mx + 2, my + 2], fill="#4A3525")
     elif difficulty == "normal":
-        # Moderate mud splatters across plate
-        for _ in range(14):
-            mx = random.randint(plate_box[0]-10, plate_box[2]+10)
-            my = random.randint(plate_box[1]-10, plate_box[3]+10)
-            mr = random.randint(6, 18)
-            draw.ellipse([mx, my, mx+mr, my+mr], fill="#4A3525")
+        # Moderate mud coverage, kept entirely inside the plate frame.
+        for _ in range(22):
+            mr = random.randint(5, 13)
+            mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
+            my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
+            draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill="#4A3525")
     elif difficulty == "hard":
-        # Heavy mud splatters + thick scratch lines across plate text!
-        for _ in range(30):
-            mx = random.randint(plate_box[0]-15, plate_box[2]+15)
-            my = random.randint(plate_box[1]-15, plate_box[3]+15)
-            mr = random.randint(10, 28)
-            draw.ellipse([mx, my, mx+mr, my+mr], fill="#3B2616")
+        # Heavy mud coverage + thick scratch lines across plate text.
+        for _ in range(42):
+            mr = random.randint(8, 22)
+            mx = random.randint(plate_box[0] + mr, plate_box[2] - mr)
+            my = random.randint(plate_box[1] + mr, plate_box[3] - mr)
+            draw.ellipse([mx - mr, my - mr, mx + mr, my + mr], fill="#3B2616")
         
         # Heavy scratches & mud streaks across numbers
-        draw.line([plate_box[0]+15, plate_box[1]+12, plate_box[0]+90, plate_box[1]+38], fill="#554433", width=6)
-        draw.line([plate_box[0]+110, plate_box[1]+8, plate_box[0]+155, plate_box[1]+42], fill="#2B1A0A", width=7)
+        draw.line([plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10], fill="#554433", width=6)
+        draw.line([plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12], fill="#2B1A0A", width=7)
 
     # Convert to RGB JPEG bytes
     final_img = Image.new("RGB", (width, height), (160, 222, 255))
