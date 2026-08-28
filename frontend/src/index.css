@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-tycoon-yellow { background-color: #FFDE4D; }
+  .bg-tycoon-sky { background-color: #A0DEFF; }
+  .bg-tycoon-purple { background-color: #6C5CE7; }
+  .bg-tycoon-purpleDark { background-color: #5F27CD; }
+  .bg-tycoon-road { background-color: #4A4D52; }
+  
+  .border-3 { border-width: 3px; }
+  .border-4 { border-width: 4px; }
+  
+  .shadow-pop { box-shadow: 4px 4px 0px #000; }
+  .shadow-pop-sm { box-shadow: 2px 2px 0px #000; }
+  .shadow-pop-lg { box-shadow: 6px 6px 0px #000; }
+  .shadow-pop-xl { box-shadow: 8px 8px 0px #000; }
+
+  .bg-stripes {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15) 15px,
+      transparent 15px,
+      transparent 30px
+    );
+  }
+
+  .plate-font {
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* Tactile Pop Button Styling */
+.pop-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.pop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.pop-btn:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Custom Animations */
+@keyframes driveIn {
+  0% { transform: translateX(-400px) scale(0.8); opacity: 0; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+.animate-drive-in {
+  animation: driveIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFDE4D;
+}
+::-webkit-scrollbar-thumb {
+  background: #6C5CE7;
+  border: 2px solid #000;
+  border-radius: 6px;
+}
