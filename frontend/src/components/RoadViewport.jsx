@@ -70,7 +70,7 @@ export default function RoadViewport({
             {/* Display Generated Cartoon Car Image from Backend */}
             <div className="relative group">
               <img
-                src={getPlateImageUrl(challenge.car_id)}
+                src={getPlateImageUrl(challenge.car_id, challenge.difficulty)}
                 alt={challenge.vehicle_name}
                 className="w-80 md:w-96 h-auto object-contain rounded-2xl border-4 border-black shadow-pop bg-sky-200"
               />

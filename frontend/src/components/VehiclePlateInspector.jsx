@@ -49,7 +49,7 @@ export default function VehiclePlateInspector({
           <div className={`relative border-4 border-black rounded-3xl overflow-hidden shadow-pop bg-black p-2 transition-all ${cleaned ? 'brightness-110 contrast-125' : ''}`}>
             {/* Zoomed Vehicle Image */}
             <img
-              src={getPlateImageUrl(challenge.car_id)}
+              src={getPlateImageUrl(challenge.car_id, challenge.difficulty)}
               alt="Zoomed Plate"
               className="w-full max-w-md h-auto rounded-2xl object-cover"
             />
