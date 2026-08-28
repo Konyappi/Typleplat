@@ -13,12 +13,12 @@ export default function ControlDock({
 }) {
   const inputRef = useRef(null);
 
-  // Auto focus input field on mount or car change
+  // Focus when a new challenge finishes loading so typing can start immediately.
   useEffect(() => {
-    if (inputRef.current && !disabled) {
+    if (inputRef.current && !disabled && !isLoading) {
       inputRef.current.focus();
     }
-  }, [disabled]);
+  }, [disabled, isLoading]);
 
   const handleChange = (e) => {
     // Convert to uppercase monospace plate format automatically
