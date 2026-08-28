@@ -188,8 +188,14 @@ def generate_cartoon_vehicle_image(car_id: int, difficulty: str = "normal") -> b
         dirt_draw.line([plate_box[0] + 8, plate_box[1] + 10, plate_box[2] - 55, plate_box[3] - 10], fill=255, width=6)
         dirt_draw.line([plate_box[0] + 65, plate_box[1] + 8, plate_box[2] - 8, plate_box[3] - 12], fill=255, width=7)
 
+    if difficulty in ("normal", "hard"):
+        dirt_draw.rectangle(
+            [plate_box[0], plate_box[1] + 27, plate_box[2], plate_box[1] + 33],
+            fill=0,
+        )
+
     dirt_color = (74, 53, 37) if difficulty != "hard" else (59, 38, 22)
-    dirt_opacity = {"easy": 120, "normal": 135, "hard": 150}[difficulty]
+    dirt_opacity = {"easy": 120, "normal": 175, "hard": 205}[difficulty]
     dirt_layer = Image.new("RGBA", (width, height), dirt_color + (0,))
     dirt_layer.putalpha(dirt_mask.point(lambda value: value * dirt_opacity // 255))
     img = Image.alpha_composite(img, dirt_layer)
