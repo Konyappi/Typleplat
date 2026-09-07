@@ -34,7 +34,7 @@ export default function TycoonShopModal({
       description: 'Menggandakan seluruh perolehan koin setiap kali tebakanmu benar!',
       cost: 750,
       icon: Zap,
-      color: 'bg-amber-400'
+      color: 'bg-green-400'
     },
     {
       id: 'vip_permit',
@@ -42,7 +42,7 @@ export default function TycoonShopModal({
       description: 'Membuka izin melintas kendaraan kelas tinggi dengan multiplier koin ekstra tinggi!',
       cost: 1200,
       icon: Shield,
-      color: 'bg-tycoon-purple text-white'
+      color: 'bg-tycoon-green text-white'
     }
   ];
 
@@ -51,20 +51,20 @@ export default function TycoonShopModal({
       <div className="bg-white border-4 border-black rounded-3xl w-full max-w-2xl shadow-pop-xl overflow-hidden animate-drive-in">
         
         {/* Header */}
-        <div className="bg-tycoon-purple text-white p-5 border-b-4 border-black flex items-center justify-between">
+        <div className="bg-tycoon-green text-white p-5 border-b-4 border-black flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-amber-400 p-2 rounded-2xl border-3 border-black text-black">
+            <div className="bg-green-400 p-2 rounded-2xl border-3 border-black text-black">
               <Store className="w-6 h-6" />
             </div>
             <div>
               <h2 className="font-display font-extrabold text-2xl tracking-wide">GARASI TYCOON SHOP</h2>
-              <p className="text-xs text-purple-200 font-bold">Beli Upgrade Alat & Booster Pendapatan Koin</p>
+              <p className="text-xs text-green-200 font-bold">Beli Upgrade Alat & Booster Pendapatan Koin</p>
             </div>
           </div>
 
           <button
             onClick={() => { sounds.playPop(); onClose(); }}
-            className="bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
+            className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
           >
             <X className="w-6 h-6" />
           </button>
@@ -73,7 +73,7 @@ export default function TycoonShopModal({
         {/* Current Balance Bar */}
         <div className="bg-amber-100 px-6 py-3 border-b-4 border-black flex items-center justify-between">
           <span className="font-bold text-sm text-amber-950">SALDO KOIN SAAT INI:</span>
-          <div className="flex items-center gap-2 bg-amber-400 border-2 border-black rounded-full px-3 py-1 font-extrabold text-black">
+          <div className="flex items-center gap-2 bg-green-400 border-2 border-black rounded-full px-3 py-1 font-extrabold text-black">
             <Coins className="w-5 h-5 text-amber-950 fill-amber-300" />
             <span className="text-lg">{coins.toLocaleString()} COINS</span>
           </div>
@@ -89,7 +89,7 @@ export default function TycoonShopModal({
             return (
               <div 
                 key={item.id}
-                className="bg-gray-50 border-3 border-black rounded-2xl p-4 shadow-pop-sm flex flex-col sm:flex-row items-center justify-between gap-4 hover:bg-yellow-50 transition-colors"
+                className="bg-gray-50 border-3 border-black rounded-2xl p-4 shadow-pop-sm flex flex-col sm:flex-row items-center justify-between gap-4 hover:bg-blue-50 transition-colors"
               >
                 <div className="flex items-center gap-4">
                   <div className={`p-3.5 rounded-2xl border-3 border-black shadow-pop-sm ${item.color}`}>
@@ -119,7 +119,7 @@ export default function TycoonShopModal({
                       disabled={!canAfford}
                       className={`w-full sm:w-auto border-3 border-black rounded-xl px-5 py-2.5 font-extrabold text-sm flex items-center justify-center gap-2 shadow-pop-sm pop-btn transition-all ${
                         canAfford 
-                          ? 'bg-amber-400 hover:bg-amber-500 text-black' 
+                          ? 'bg-green-400 hover:bg-green-500 text-black'
                           : 'bg-gray-200 text-gray-400 cursor-not-allowed border-gray-400'
                       }`}
                     >

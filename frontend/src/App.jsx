@@ -4,23 +4,23 @@ import GameDashboard from './components/GameDashboard';
 
 const DIFFICULTIES = [
   { id: 'easy', label: 'EASY', time: '20 seconds', reward: '1.0x', color: 'bg-emerald-400', description: 'Clear plates and a relaxed pace.' },
-  { id: 'normal', label: 'NORMAL', time: '15 seconds', reward: '1.5x', color: 'bg-yellow-400', description: 'A balanced test for sharp eyes.' },
-  { id: 'hard', label: 'HARD', time: '10 seconds', reward: '2.5x', color: 'bg-rose-500 text-white', description: 'Heavy mud, tricky plates, big rewards.' }
+  { id: 'normal', label: 'NORMAL', time: '15 seconds', reward: '1.5x', color: 'bg-blue-400', description: 'A balanced test for sharp eyes.' },
+  { id: 'hard', label: 'HARD', time: '10 seconds', reward: '2.5x', color: 'bg-blue-600 text-white', description: 'Heavy mud, tricky plates, big rewards.' }
 ];
 
 function WelcomeDashboard({ onPlay }) {
   return (
-    <main className="min-h-screen bg-tycoon-yellow bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
+    <main className="min-h-screen bg-tycoon-blue bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
       <section className="w-full max-w-5xl bg-white border-4 border-black shadow-pop-xl rounded-[2rem] overflow-hidden">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="p-7 md:p-12 bg-tycoon-purple text-white relative overflow-hidden">
+          <div className="p-7 md:p-12 bg-tycoon-green text-white relative overflow-hidden">
             <div className="absolute -right-10 -top-10 text-[10rem] opacity-15 rotate-12 select-none">🚗</div>
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-yellow-300 text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop-sm">
+              <div className="inline-flex items-center gap-2 bg-blue-300 text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop-sm">
                 <Sparkles className="w-4 h-4" /> AI-POWERED SIMULATION
               </div>
               <h1 className="mt-7 max-w-xl font-display font-black text-5xl md:text-7xl leading-[0.9] tracking-tight">
-                TYCOON<br /><span className="text-yellow-300">PLATE TYPER</span>
+                TYCOON<br /><span className="text-blue-300">PLATE TYPER</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg md:text-xl font-bold leading-relaxed text-white/90">
                 Become the gatekeeper. Read messy license plates, verify every vehicle, and build your inspection empire one sharp answer at a time.
@@ -28,7 +28,7 @@ function WelcomeDashboard({ onPlay }) {
               <button
                 type="button"
                 onClick={onPlay}
-                className="mt-8 bg-yellow-300 hover:bg-yellow-200 text-black font-display font-black text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn inline-flex items-center gap-3"
+                className="mt-8 bg-blue-300 hover:bg-blue-200 text-black font-display font-black text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn inline-flex items-center gap-3"
               >
                 <Play className="w-7 h-7 fill-black" /> PLAY NOW <ArrowRight className="w-7 h-7" />
               </button>
@@ -69,7 +69,7 @@ function WelcomeDashboard({ onPlay }) {
 
 function DifficultyScreen({ selectedDifficulty, onSelect, onBack, onStart }) {
   return (
-    <main className="min-h-screen bg-tycoon-yellow bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
+    <main className="min-h-screen bg-tycoon-blue bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
       <section className="w-full max-w-4xl">
         <button type="button" onClick={onBack} className="mb-5 inline-flex items-center gap-2 font-black text-black hover:underline">
           <ArrowLeft className="w-5 h-5" /> BACK TO BRIEFING
@@ -101,7 +101,7 @@ function DifficultyScreen({ selectedDifficulty, onSelect, onBack, onStart }) {
               );
             })}
           </div>
-          <button type="button" onClick={onStart} className="mt-8 w-full bg-tycoon-purple hover:bg-tycoon-purpleDark text-white font-display font-black text-xl py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn flex items-center justify-center gap-3">
+          <button type="button" onClick={onStart} className="mt-8 w-full bg-tycoon-green hover:bg-tycoon-greenDark text-white font-display font-black text-xl py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn flex items-center justify-center gap-3">
             START CHECKPOINT <ArrowRight className="w-6 h-6" />
           </button>
         </div>

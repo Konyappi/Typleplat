@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @layer utilities {
-  .bg-tycoon-yellow { background-color: #FFDE4D; }
-  .bg-tycoon-sky { background-color: #A0DEFF; }
-  .bg-tycoon-purple { background-color: #6C5CE7; }
-  .bg-tycoon-purpleDark { background-color: #5F27CD; }
+  .bg-tycoon-blue { background-color: #2563EB; }
+  .bg-tycoon-blueLight { background-color: #DBEAFE; }
+  .bg-tycoon-green { background-color: #16A34A; }
+  .bg-tycoon-greenDark { background-color: #15803D; }
   .bg-tycoon-road { background-color: #4A4D52; }
   
   .border-3 { border-width: 3px; }
@@ -71,10 +71,10 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFDE4D;
+  background: #2563EB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6C5CE7;
+  background: #16A34A;
   border: 2px solid #000;
   border-radius: 6px;
 }

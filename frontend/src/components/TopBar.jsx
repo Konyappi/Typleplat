@@ -21,8 +21,8 @@ export default function TopBar({
 
   const DIFFICULTIES = [
     { id: 'easy', label: 'EASY', color: 'bg-emerald-400 text-black', badge: '🟢 1.0x' },
-    { id: 'normal', label: 'NORMAL', color: 'bg-yellow-400 text-black', badge: '🟡 1.5x' },
-    { id: 'hard', label: 'HARD', color: 'bg-rose-500 text-white', badge: '🔴 2.5x' }
+    { id: 'normal', label: 'NORMAL', color: 'bg-blue-400 text-black', badge: '🟡 1.5x' },
+    { id: 'hard', label: 'HARD', color: 'bg-blue-600 text-white', badge: '🔴 2.5x' }
   ];
 
   return (
@@ -31,13 +31,13 @@ export default function TopBar({
         
         {/* Logo & Title */}
         <div className="flex items-center gap-3">
-          <div className="bg-tycoon-yellow rounded-full p-2 border-3 border-black shadow-pop-sm flex items-center justify-center animate-bounce-slow">
+          <div className="bg-tycoon-blue rounded-full p-2 border-3 border-black shadow-pop-sm flex items-center justify-center animate-bounce-slow">
             <span className="text-2xl md:text-3xl select-none">🚗</span>
           </div>
           <div>
             <h1 className="font-display font-extrabold text-xl md:text-2xl text-black tracking-wide flex items-center gap-1.5 leading-none">
               TYCOON <span className="text-tycoon-purple">PLATE TYPER</span>
-              <Sparkles className="w-5 h-5 text-yellow-500 fill-yellow-400 inline-block" />
+              <Sparkles className="w-5 h-5 text-blue-500 fill-blue-400 inline-block" />
             </h1>
             <p className="text-xs font-bold text-gray-500 hidden sm:block">AI Licensing Gatekeeper Simulation</p>
           </div>
@@ -75,7 +75,7 @@ export default function TopBar({
         {/* Currency & Streaks (Top Bar Score Bubble) */}
         <div className="flex items-center gap-2 md:gap-4">
           {/* Challenge Timer */}
-          <div className={`border-3 border-black rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-pop-sm transition-colors ${timeLeft <= 3 ? 'bg-rose-500 text-white animate-pulse' : 'bg-sky-100 text-black'}`}>
+          <div className={`border-3 border-black rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-pop-sm transition-colors ${timeLeft <= 3 ? 'bg-blue-600 text-white animate-pulse' : 'bg-sky-100 text-black'}`}>
             <Clock className="w-5 h-5" />
             <span className="font-display font-extrabold text-lg md:text-xl tabular-nums">
               {timeLeft}s
@@ -84,7 +84,7 @@ export default function TopBar({
 
           {/* Coin Token */}
           <div className="bg-amber-100 border-3 border-black rounded-full px-3 py-1.5 flex items-center gap-2 shadow-pop-sm">
-            <div className="bg-amber-400 rounded-full p-1 border-2 border-black">
+            <div className="bg-green-400 rounded-full p-1 border-2 border-black">
               <Coins className="w-5 h-5 text-amber-950 fill-amber-300" />
             </div>
             <span className="font-display font-extrabold text-lg md:text-xl text-black">
@@ -108,7 +108,7 @@ export default function TopBar({
           {/* Shop Button */}
           <button
             onClick={() => { sounds.playPop(); onOpenShop(); }}
-            className="bg-tycoon-purple hover:bg-tycoon-purpleDark text-white font-extrabold px-3.5 py-2 rounded-full border-3 border-black shadow-pop-sm pop-btn flex items-center gap-1.5 text-sm"
+            className="bg-tycoon-green hover:bg-tycoon-greenDark text-white font-extrabold px-3.5 py-2 rounded-full border-3 border-black shadow-pop-sm pop-btn flex items-center gap-1.5 text-sm"
             title="Buka Garasi Shop"
           >
             <Store className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function TopBar({
           {/* Stats Button */}
           <button
             onClick={() => { sounds.playPop(); onOpenStats(); }}
-            className="bg-tycoon-sky hover:bg-sky-300 text-black font-extrabold px-3 py-2 rounded-full border-3 border-black shadow-pop-sm pop-btn flex items-center gap-1"
+            className="bg-tycoon-blueLight hover:bg-sky-300 text-black font-extrabold px-3 py-2 rounded-full border-3 border-black shadow-pop-sm pop-btn flex items-center gap-1"
             title="Lihat Statistik"
           >
             <BarChart3 className="w-4 h-4" />

@@ -10,7 +10,7 @@ export default function RoadViewport({
 }) {
   if (!challenge) {
     return (
-      <div className="w-full max-w-4xl mx-auto h-72 bg-tycoon-sky border-4 border-black rounded-3xl shadow-pop flex items-center justify-center">
+      <div className="w-full max-w-4xl mx-auto h-72 bg-tycoon-blueLight border-4 border-black rounded-3xl shadow-pop flex items-center justify-center">
         <div className="text-xl font-extrabold text-black flex items-center gap-2">
           <span className="animate-spin text-2xl">🚗</span> Memuat Mobil Baru...
         </div>
@@ -34,7 +34,7 @@ export default function RoadViewport({
         <div className="bg-white border-3 border-black rounded-full px-3 py-1 text-xs font-black text-black shadow-pop-sm flex items-center gap-1.5">
           <span className="text-base">🚘</span> {challenge.vehicle_name} ({challenge.vehicle_type})
         </div>
-        <div className="bg-yellow-300 border-3 border-black rounded-full px-3 py-1 text-xs font-black text-black shadow-pop-sm">
+        <div className="bg-blue-300 border-3 border-black rounded-full px-3 py-1 text-xs font-black text-black shadow-pop-sm">
           REWARD: {Math.round(100 * challenge.coin_multiplier)} COINS 🪙
         </div>
       </div>
@@ -47,11 +47,11 @@ export default function RoadViewport({
 
         {/* Road Lanes & Yellow Dashed Divider Lines */}
         <div className="absolute top-1/2 left-0 w-full h-3 -translate-y-1/2 flex items-center justify-around">
-          <div className="w-12 h-full bg-yellow-400 border-2 border-black rounded-full"></div>
-          <div className="w-12 h-full bg-yellow-400 border-2 border-black rounded-full"></div>
-          <div className="w-12 h-full bg-yellow-400 border-2 border-black rounded-full"></div>
-          <div className="w-12 h-full bg-yellow-400 border-2 border-black rounded-full"></div>
-          <div className="w-12 h-full bg-yellow-400 border-2 border-black rounded-full"></div>
+          <div className="w-12 h-full bg-blue-400 border-2 border-black rounded-full"></div>
+          <div className="w-12 h-full bg-blue-400 border-2 border-black rounded-full"></div>
+          <div className="w-12 h-full bg-blue-400 border-2 border-black rounded-full"></div>
+          <div className="w-12 h-full bg-blue-400 border-2 border-black rounded-full"></div>
+          <div className="w-12 h-full bg-blue-400 border-2 border-black rounded-full"></div>
         </div>
 
         {/* Asphalt Texture details */}
@@ -78,12 +78,12 @@ export default function RoadViewport({
               {/* Interactive Plate Inspection Button overlay */}
               <button
                 onClick={onOpenInspector}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-yellow-400 hover:bg-yellow-500 text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop pop-btn flex items-center gap-1.5 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-blue-400 hover:bg-blue-500 text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop pop-btn flex items-center gap-1.5 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all"
                 title="Perbesar & Bersihkan Plat!"
               >
                 <Search className="w-3.5 h-3.5 text-black" />
                 <span>INSPEKSI PLAT</span>
-                {hasMagnifier && <Sparkles className="w-3.5 h-3.5 text-purple-700 fill-purple-400" />}
+                {hasMagnifier && <Sparkles className="w-3.5 h-3.5 text-green-700 fill-purple-400" />}
               </button>
 
             </div>

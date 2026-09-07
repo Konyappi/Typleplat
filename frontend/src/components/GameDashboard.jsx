@@ -186,7 +186,7 @@ export default function GameDashboard({ initialDifficulty = 'normal' }) {
   };
 
   return (
-    <div className="min-h-screen bg-tycoon-yellow flex flex-col justify-between selection:bg-tycoon-purple selection:text-white">
+    <div className="min-h-screen bg-tycoon-blue flex flex-col justify-between selection:bg-tycoon-green selection:text-white">
       
       {/* Top Bar Score Bubble & Difficulty Selector */}
       <TopBar 

@@ -58,7 +58,7 @@ export default function ControlDock({
               disabled={disabled || isLoading}
               placeholder="CONTOH: B 1234 ABC"
               maxLength={12}
-              className="w-full bg-yellow-50 border-4 border-black rounded-2xl px-5 py-3.5 text-2xl md:text-3xl font-extrabold plate-font uppercase tracking-widest text-black placeholder:text-gray-400 placeholder:normal-case shadow-inner focus:outline-none focus:bg-white focus:ring-4 focus:ring-tycoon-purple transition-all"
+              className="w-full bg-blue-50 border-4 border-black rounded-2xl px-5 py-3.5 text-2xl md:text-3xl font-extrabold plate-font uppercase tracking-widest text-black placeholder:text-gray-400 placeholder:normal-case shadow-inner focus:outline-none focus:bg-white focus:ring-4 focus:ring-tycoon-purple transition-all"
             />
 
             {/* Clear Input Button */}
@@ -66,7 +66,7 @@ export default function ControlDock({
               <button
                 type="button"
                 onClick={handleClear}
-                className="absolute right-4 p-1.5 bg-gray-200 hover:bg-rose-400 text-gray-700 hover:text-white border-2 border-black rounded-xl transition-all"
+                className="absolute right-4 p-1.5 bg-gray-200 hover:bg-blue-400 text-gray-700 hover:text-white border-2 border-black rounded-xl transition-all"
                 title="Hapus Teks"
               >
                 <Eraser className="w-5 h-5" />
@@ -83,11 +83,11 @@ export default function ControlDock({
             type="button"
             onClick={() => { sounds.playPop(); onToggleHint(); }}
             className={`p-3.5 rounded-2xl border-4 border-black shadow-pop pop-btn transition-colors ${
-              showHint ? 'bg-amber-400 text-black' : 'bg-gray-100 hover:bg-yellow-200 text-gray-700'
+              showHint ? 'bg-green-400 text-black' : 'bg-gray-100 hover:bg-blue-200 text-gray-700'
             }`}
             title="Minta Petunjuk Hint"
           >
-            <Lightbulb className={`w-6 h-6 ${showHint ? 'fill-amber-900 text-amber-900' : ''}`} />
+            <Lightbulb className={`w-6 h-6 ${showHint ? 'fill-amber-900 text-green-900' : ''}`} />
           </button>
 
           {/* Massive Tactile "CHECK ANSWER!" Button */}
@@ -95,7 +95,7 @@ export default function ControlDock({
             type="button"
             onClick={() => { sounds.playPop(); onSubmit(); }}
             disabled={disabled || isLoading || !inputValue.trim()}
-            className="flex-1 md:flex-none bg-tycoon-purple hover:bg-tycoon-purpleDark disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-display font-extrabold text-xl md:text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn flex items-center justify-center gap-3 transition-all"
+            className="flex-1 md:flex-none bg-tycoon-green hover:bg-tycoon-greenDark disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-display font-extrabold text-xl md:text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn flex items-center justify-center gap-3 transition-all"
           >
             {isLoading ? (
               <>
@@ -104,7 +104,7 @@ export default function ControlDock({
               </>
             ) : (
               <>
-                <CheckCircle2 className="w-7 h-7 text-yellow-300" />
+                <CheckCircle2 className="w-7 h-7 text-blue-300" />
                 <span>CHECK ANSWER!</span>
               </>
             )}

@@ -24,9 +24,9 @@ export default function VehiclePlateInspector({
       <div className="bg-white border-4 border-black rounded-3xl w-full max-w-xl shadow-pop-xl overflow-hidden animate-drive-in">
         
         {/* Modal Header */}
-        <div className="bg-tycoon-sky text-black p-4 border-b-4 border-black flex items-center justify-between">
+        <div className="bg-tycoon-blueLight text-black p-4 border-b-4 border-black flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="bg-yellow-400 p-2 rounded-2xl border-3 border-black">
+            <div className="bg-blue-400 p-2 rounded-2xl border-3 border-black">
               <ZoomIn className="w-6 h-6 text-black" />
             </div>
             <div>
@@ -37,7 +37,7 @@ export default function VehiclePlateInspector({
 
           <button
             onClick={() => { sounds.playPop(); onClose(); }}
-            className="bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
+            className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
           >
             <X className="w-6 h-6" />
           </button>
@@ -55,7 +55,7 @@ export default function VehiclePlateInspector({
             />
 
             {/* Magnifier Reticle Overlay */}
-            <div className="absolute inset-0 border-4 border-yellow-400/60 rounded-2xl pointer-events-none flex items-center justify-center">
+            <div className="absolute inset-0 border-4 border-blue-400/60 rounded-2xl pointer-events-none flex items-center justify-center">
               <div className="w-16 h-16 border-2 border-dashed border-white rounded-full animate-ping opacity-40"></div>
             </div>
           </div>
@@ -66,14 +66,14 @@ export default function VehiclePlateInspector({
               <button
                 onClick={handleWipe}
                 className={`w-full max-w-xs border-3 border-black rounded-2xl py-3 px-4 font-extrabold text-sm shadow-pop pop-btn flex items-center justify-center gap-2 transition-all ${
-                  cleaned ? 'bg-emerald-400 text-black' : 'bg-yellow-400 hover:bg-yellow-500 text-black'
+                  cleaned ? 'bg-emerald-400 text-black' : 'bg-blue-400 hover:bg-blue-500 text-black'
                 }`}
               >
                 <Sparkles className="w-5 h-5" />
                 <span>{cleaned ? 'PLAT SUDAH DIBERSIHKAN! ✨' : 'USAP & BERSIHKAN LUMPUR 🧹'}</span>
               </button>
             ) : (
-              <div className="bg-amber-100 border-2 border-black rounded-2xl p-3 text-center text-xs font-bold text-amber-900 w-full max-w-md">
+              <div className="bg-amber-100 border-2 border-black rounded-2xl p-3 text-center text-xs font-bold text-green-900 w-full max-w-md">
                 💡 Tip: Beli <span className="underline">Pembersih Lumpur Garasi</span> di Toko untuk menyeka noda hitam pada plat!
               </div>
             )}

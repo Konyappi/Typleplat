@@ -14,9 +14,9 @@ export default function StatsModal({ isOpen, onClose, stats }) {
       <div className="bg-white border-4 border-black rounded-3xl w-full max-w-lg shadow-pop-xl overflow-hidden animate-drive-in">
         
         {/* Header */}
-        <div className="bg-tycoon-sky text-black p-5 border-b-4 border-black flex items-center justify-between">
+        <div className="bg-tycoon-blueLight text-black p-5 border-b-4 border-black flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-yellow-400 p-2 rounded-2xl border-3 border-black">
+            <div className="bg-blue-400 p-2 rounded-2xl border-3 border-black">
               <BarChart3 className="w-6 h-6 text-black" />
             </div>
             <div>
@@ -27,7 +27,7 @@ export default function StatsModal({ isOpen, onClose, stats }) {
 
           <button
             onClick={() => { sounds.playPop(); onClose(); }}
-            className="bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
+            className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-2xl border-3 border-black shadow-pop-sm pop-btn"
           >
             <X className="w-6 h-6" />
           </button>
@@ -37,7 +37,7 @@ export default function StatsModal({ isOpen, onClose, stats }) {
         <div className="p-6 grid grid-cols-2 gap-4 bg-gray-50">
           
           <div className="bg-white border-3 border-black rounded-2xl p-4 shadow-pop-sm flex items-center gap-3">
-            <div className="bg-purple-100 p-3 rounded-xl border-2 border-black text-tycoon-purple">
+            <div className="bg-green-100 p-3 rounded-xl border-2 border-black text-tycoon-purple">
               <Target className="w-6 h-6" />
             </div>
             <div>
@@ -57,7 +57,7 @@ export default function StatsModal({ isOpen, onClose, stats }) {
           </div>
 
           <div className="bg-white border-3 border-black rounded-2xl p-4 shadow-pop-sm flex items-center gap-3">
-            <div className="bg-yellow-100 p-3 rounded-xl border-2 border-black text-yellow-600">
+            <div className="bg-blue-100 p-3 rounded-xl border-2 border-black text-yellow-600">
               <span className="text-2xl">🎯</span>
             </div>
             <div>
