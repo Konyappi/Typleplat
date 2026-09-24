@@ -10,17 +10,17 @@ const DIFFICULTIES = [
 
 function WelcomeDashboard({ onPlay }) {
   return (
-    <main className="min-h-screen bg-black bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
+    <main className="min-h-screen bg-tycoon-blue bg-stripes px-4 py-8 md:py-12 flex items-center justify-center">
       <section className="w-full max-w-5xl bg-white border-4 border-black shadow-pop-xl rounded-[2rem] overflow-hidden">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="p-7 md:p-12 bg-neutral-900 text-white relative overflow-hidden">
+          <div className="p-7 md:p-12 bg-tycoon-green text-white relative overflow-hidden">
             <div className="absolute -right-10 -top-10 text-[10rem] opacity-15 rotate-12 select-none">🚗</div>
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-white text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop-sm">
+              <div className="inline-flex items-center gap-2 bg-blue-300 text-black border-3 border-black rounded-full px-3 py-1 text-xs font-black shadow-pop-sm">
                 <Sparkles className="w-4 h-4" /> AI-POWERED SIMULATION
               </div>
               <h1 className="mt-7 max-w-xl font-display font-black text-5xl md:text-7xl leading-[0.9] tracking-tight">
-                TYCOON<br /><span className="text-neutral-300">PLATE TYPER</span>
+                TYCOON<br /><span className="text-blue-300">PLATE TYPER</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg md:text-xl font-bold leading-relaxed text-white/90">
                 Become the gatekeeper. Read messy license plates, verify every vehicle, and build your inspection empire one sharp answer at a time.
@@ -28,17 +28,17 @@ function WelcomeDashboard({ onPlay }) {
               <button
                 type="button"
                 onClick={onPlay}
-                className="mt-8 bg-white hover:bg-neutral-200 text-black font-display font-black text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn inline-flex items-center gap-3"
+                className="mt-8 bg-blue-300 hover:bg-blue-200 text-black font-display font-black text-2xl px-8 py-4 rounded-2xl border-4 border-black shadow-pop-lg pop-btn inline-flex items-center gap-3"
               >
                 <Play className="w-7 h-7 fill-black" /> PLAY NOW <ArrowRight className="w-7 h-7" />
               </button>
             </div>
           </div>
 
-          <div className="p-7 md:p-10 bg-white border-t-4 border-black lg:border-t-0 lg:border-l-4 flex flex-col justify-center">
+          <div className="p-7 md:p-10 bg-sky-100 flex flex-col justify-center">
             <div className="flex items-center gap-3">
               <div className="bg-white border-3 border-black rounded-2xl p-3 shadow-pop-sm">
-                <Bot className="w-8 h-8 text-black" />
+                <Bot className="w-8 h-8 text-tycoon-purple" />
               </div>
               <div>
                 <p className="font-black text-sm text-gray-500 uppercase tracking-widest">Your mission</p>
@@ -52,7 +52,7 @@ function WelcomeDashboard({ onPlay }) {
                 [Coins, 'Earn and upgrade', 'Build your streak and unlock your garage.']
               ].map(([Icon, title, description]) => (
                 <div key={title} className="flex gap-3 items-start">
-                  <Icon className="w-6 h-6 mt-0.5 shrink-0 text-black" />
+                  <Icon className="w-6 h-6 mt-0.5 shrink-0 text-tycoon-purple" />
                   <div><h3 className="font-black text-black">{title}</h3><p className="font-medium text-gray-600 text-sm">{description}</p></div>
                 </div>
               ))}
